@@ -2,9 +2,12 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const routes = require('../routes/routes');
 const porta = 3000;
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.json());
+app.use(routes);
 app.listen(porta, () => {
-    console.log(`Servidor rodando na porta ${porta}`);
+    console.log(`Servidor rodando  http://localhost:${porta}`);
 });
